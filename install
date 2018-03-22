@@ -1,4 +1,9 @@
 #!/bin/bash
 
-sudo cp busybox /usr/bin
-sudo cp git /usr/bin
+chmod +x busybox
+alias busybox=${PWD}/busybox
+alias vi='$PWD/busybox vi'
+#alias ls='$PWD/busybox ls'
+
+chmod +x git
+alias git=$PWD/git

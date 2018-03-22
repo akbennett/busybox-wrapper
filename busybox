@@ -22,4 +22,8 @@ if [ -t 0 ]; then
     DOCKER_RUN_OPTIONS="$DOCKER_RUN_OPTIONS -i"
 fi
 
-exec docker run --rm $DOCKER_RUN_OPTIONS $VOLUMES -w "$(pwd)" $IMAGE $CMD "$@"
+# run as local user
+#DOCKER_RUN_OPTIONS=" --user $(id -u) --group-add $(id -g)  "
+
+echo docker run $DOCKER_RUN_OPTIONS $VOLUMES -w "$(pwd)" $IMAGE $CMD "$@"
+exec docker run $DOCKER_RUN_OPTIONS $VOLUMES -w "$(pwd)" $IMAGE $CMD "$@"
