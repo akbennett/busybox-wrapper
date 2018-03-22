@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo cp busybox /usr/bin
+sudo cp git /usr/bin
